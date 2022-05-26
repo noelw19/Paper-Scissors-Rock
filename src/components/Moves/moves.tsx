@@ -1,4 +1,3 @@
-import React from 'react';
 
 enum PlayChoice {
     rock = 'Rock',
