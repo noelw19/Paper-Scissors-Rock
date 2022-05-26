@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import { useState} from 'react';
 import movesObj from '../Moves/moves';
 
 import rock from '../../images/rock.png';
@@ -14,24 +14,6 @@ function renderAnswerToEl(classname: string, ans: string): void {
   let computerChoiceEl = document.querySelector(classname) as HTMLElement;
   computerChoiceEl.style.backgroundImage = ans === 'Rock' ? `url(${rock})` : ans === 'Paper' ? `url(${paper})` : `url(${scissors})`
   computerChoiceEl.style.backgroundSize = 'contain';
-}
- 
-function handleChoice(e: React.MouseEvent<HTMLButtonElement>): string {
-  // checkIfWin()
-  
-  let compAns: string = computerChoice()
-  renderAnswerToEl('.computerAnswer', compAns);
-
-  let inner= e.target as HTMLInputElement;
-  let userAns = inner.innerText;
-
-  let result = checkIfWin(compAns === 'Paper' ? PlayChoice.paper : compAns === 'Rock' ? PlayChoice.rock : PlayChoice.scissors, userAns === 'Paper' ? PlayChoice.paper : userAns === 'Rock' ? PlayChoice.rock : PlayChoice.scissors)
-  let outcome = GameResult[result]
-  renderAnswerToEl('.userAnswer', userAns);
-
-  console.log(`User chose ${userAns}, comp choice is ${compAns} \n Did you win? ${result} \n outcome = ${outcome}`);
-  return outcome.toString();
-
 }
 
 function ComputerChoiceBox() {
