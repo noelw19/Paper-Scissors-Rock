@@ -115,6 +115,7 @@ function UserChoiceBox() {
       </div>
       <div className="scoreBoard" >
         <h4 style={{textAlign: 'center'}}>SCORE</h4>
+          <p>First to 10!</p>
           <p className='roundRes'>Result</p>
           <div style={{display: 'flex', justifyContent: 'space-between'}}><p>User: </p> <p style={{textAlign: 'right'}}>{userCount}</p></div>
           <div style={{display: 'flex', justifyContent: 'space-between'}}><p>Computer: </p> <p style={{textAlign: 'right'}}>{comCount}</p></div>
